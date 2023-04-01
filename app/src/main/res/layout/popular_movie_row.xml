@@ -10,12 +10,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/upcoming_movies"
+        android:text="@string/popular_movies"
         android:textStyle="bold"
         android:textSize="20sp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_upcoming_movies"
+        android:id="@+id/rv_popular_movies"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:orientation="horizontal"
