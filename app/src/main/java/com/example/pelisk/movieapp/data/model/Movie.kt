@@ -19,3 +19,5 @@ data class Movie(
     val vote_count: Int = -1
 
 )
+
+data class MovieList(val results: List<Movie> = listOf())
