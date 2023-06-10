@@ -30,19 +30,26 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         binding = FragmentMovieBinding.bind(view)
         binding.progressBar.visibility = View.GONE
 
-        viewModel.fetchUpcomingMovies().observe(viewLifecycleOwner, Observer { result ->
-            when (result) {
-                is Resource.Loading -> {
-                    Log.d("LiveData", "Loading")
-                }
-                is Resource.Success -> {
-                    Log.d("LiveData", "${result.data}")
-                }
-                is Resource.Failure<*> -> {
-                    Log.d("LiveData", "${result.exception}")
-                }
-            }
+        viewModel.fetchMainScreenMovies().observe(viewLifecycleOwner, Observer { result ->
+          when(result) {
+              is Resource.Loading -> {
+                  Log.d("LiveData", "Loading...")
+              }
+              is Resource.Success -> {
+                Log.d("LiveData",
+                    "Upcoming:\n" +
+                        "${result.data.first}\n" +
+                        "TopRated:\n" +
+                        "${result.data.second}\n"
+                        +"Popular:\n" +
+                        "${result.data.third}")
+              }
+              is Resource.Failure -> {
+                  Log.d("LiveDataError", "${result.exception}")
+              }
+          }
         })
+
     }
 
 
