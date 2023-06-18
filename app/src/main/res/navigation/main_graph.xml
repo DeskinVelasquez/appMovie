@@ -18,5 +18,30 @@
         android:id="@+id/movieDetailFragment"
         android:name="com.example.pelisk.movieapp.ui.moviedetails.MovieDetailFragment"
         android:label="fragment_movie_detail"
-        tools:layout="@layout/fragment_movie_detail" />
+        tools:layout="@layout/fragment_movie_detail" >
+        <argument
+            android:name="posterImageUrl"
+            app:argType="string" />
+        <argument
+            android:name="backgroundImageUrl"
+            app:argType="string" />
+        <argument
+            android:name="voteAverage"
+            app:argType="float" />
+        <argument
+            android:name="voteCount"
+            app:argType="integer" />
+        <argument
+            android:name="overView"
+            app:argType="string" />
+        <argument
+            android:name="tittle"
+            app:argType="string" />
+        <argument
+            android:name="language"
+            app:argType="string" />
+        <argument
+            android:name="releaseDate"
+            app:argType="string" />
+    </fragment>
 </navigation>

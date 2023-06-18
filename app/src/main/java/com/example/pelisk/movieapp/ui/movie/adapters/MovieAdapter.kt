@@ -22,8 +22,7 @@ class MovieAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
         //se esta usando ViewBinding
-        val itemBinding =
-            MovieItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemBinding = MovieItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val holder = MoviesViewHolder(itemBinding, parent.context)
 
         itemBinding.root.setOnClickListener {
@@ -54,7 +53,7 @@ class MovieAdapter(
 
 
         override fun bind(item: Movie) {
-            Glide.with(contex).load("https://image.tmdb.org/t/p/w500/" + item.poster_path)
+            Glide.with(contex).load("https://image.tmdb.org/t/p/w500/${item.poster_path}")
                 .centerCrop().into(binding.imgMovie)
         }
 
